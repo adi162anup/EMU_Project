@@ -1,0 +1,13 @@
+.topnav span { 
+    display: inline-block; 
+	width: calc(33%); 
+	min-height: auto; 
+	background-color: #d6f1ff; 
+	height: auto; 
+    text-align: center;
+  } 
+
+.projectName{
+
+
+}
