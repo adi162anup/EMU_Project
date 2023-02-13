@@ -6,45 +6,394 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <section class="header">
         <nav class="navbar navbar-expand-lg">
             <div class="mr-auto">
-                <a href=""><img src="./pictures/indianRailway.png" height="80px" width="80px"></a>
+                <a href=""><img class="logo" src="./pictures/indianRailway.png" height="80px" width="80px"></a>
             </div>
             <div class="navbar-header ms-auto">
-                <a class="navbar-brand navbar-collapse text-white" href="index.html">Tambaram Rake Monitoring System</a>
+                <a class="navbar-brand navbar-collapse text-white" href="index.html">Tambaram Rake Monitoring
+                    System</a>
             </div>
             <div class="ms-auto">
-                <a href=""><img src="./pictures/SRMlogo.png" height="80px" width="80px"></a>
+                <a href=""><img class="logo" src="./pictures/SRMlogo.png" height="80px" width="80px"></a>
             </div>
         </nav>
     </section>
-    <br>
     <section class="body">
-        <div class="buttons">
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Rake Live
-                status</a>&nbsp;&nbsp;
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Rake Live Position
-            </a>&nbsp;&nbsp;
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">POH Coach Status
-            </a>&nbsp;&nbsp;
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Coach History
-            </a>&nbsp;&nbsp;
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">UUOR
-            </a>&nbsp;&nbsp;
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">UES & Spares
-            </a>&nbsp;&nbsp;
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">RAP
-            </a>&nbsp;&nbsp;
-            <a href="#" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Inspection Compliances
-            </a>&nbsp;&nbsp;
+        <div class="row">
+            <div class="buttons">
+                <a href="#" class="adjust-button btn btn-primary btn-lg active" role="button" aria-pressed="true">Rake
+                    Live
+                    status</a>
+                <a href="#" class="adjust-button btn btn-primary btn-lg active" role="button" aria-pressed="true">Rake
+                    Live
+                    Position
+                </a>
+                <a href="#" class="adjust-button btn btn-primary btn-lg active" role="button" aria-pressed="true">POH
+                    Coach
+                    Status
+                </a>
+                <a href="#" class="adjust-button btn btn-primary btn-lg active" role="button" aria-pressed="true">Coach
+                    History
+                </a>
+                <a href="#" class="adjust-button btn btn-primary btn-lg active" role="button" aria-pressed="true">UUOR
+                </a>
+                <a href="#" class="adjust-button btn btn-primary btn-lg active" role="button" aria-pressed="true">UES &
+                    Spares
+                </a>
+                <a href="#" class="adjust-button btn btn-primary btn-lg active" role="button" aria-pressed="true">RAP
+                </a>
+                <a href="#" class="adjust-button btn btn-primary btn-lg active" role="button"
+                    aria-pressed="true">Inspection
+                    Compliances
+                </a>
+            </div>
+        </div>
+
+        <div class="live-status">
+            <center>
+                <table cellspacing="10">
+                    <tr>
+                        <th>RAKE 1</th>
+                        <td>
+                            <button class="btn btn-green">140765</button>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 2</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 3</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 4</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 5</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 6</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 7</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 8</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 9</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 10</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 11</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 12</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 13</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 14</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 15</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 16</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 17</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 18</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 19</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 20</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 21</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>RAKE 22</th>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                        <td>
+                            <div class="btn btn-green">140765</div>
+                        </td>
+                    </tr>
+                </table>
+            </center>
         </div>
     </section>
+    <script src="script.js"></script>
 </body>
 
 </html>
