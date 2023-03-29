@@ -31,7 +31,7 @@ rakeBtns.forEach(function(rakeBtn) {
     const temperature = await fetchTemperatureData(rakeId);
     // Update the modal content with the fetched temperature data
      const modalBody = document.querySelector(".modal-body");
-     modalBody.innerHTML = `Temperature: ${temperature} F`;
+     modalBody.innerHTML = `${temperature}`;
 
   });
 });
@@ -40,7 +40,7 @@ async function fetchTemperatureData(rakeId) {
   // Function to fetch temperature data for the specified rake ID
   console.log(rakeId)
   try {
-    const snapshot = await get(child(dbRef, `rakes/${rakeId}`));
+    const snapshot = await get(child(dbRef, `rakes/${rakeId}/rakeTemperature`));
     if (snapshot.exists()) {
       const temp = snapshot.val().rakeTemperature;
       return temp;
