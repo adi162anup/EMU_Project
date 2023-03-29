@@ -1,0 +1,53 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
+import { getDatabase,ref,get,child} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCNzRdlcfQeoN8a7L0jA04zhDamdpwyyJI",
+  authDomain: "learnfirebase-f2755.firebaseapp.com",
+  databaseURL: "https://learnfirebase-f2755-default-rtdb.asia-southeast1.firebasedatabase.app/",
+  projectId: "learnfirebase-f2755",
+  storageBucket: "learnfirebase-f2755.appspot.com",
+  messagingSenderId: "994018527725",
+  appId: "1:994018527725:web:d6978ce0e350bd778effe4",
+  measurementId: "G-WBPJCQ3BK5"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+console.log(db);
+const dbRef = ref(db);
+
+const rakeBtns = document.querySelectorAll(".rakeBtn");
+rakeBtns.forEach(function(rakeBtn) {
+  rakeBtn.addEventListener("click", async function() {
+    const rakeId = rakeBtn.dataset.rakeId;
+    const temperature = await fetchTemperatureData(rakeId);
+    // Update the modal content with the fetched temperature data
+     const modalBody = document.querySelector(".modal-body");
+     modalBody.innerHTML = `Temperature: ${temperature} F`;
+
+  });
+});
+
+async function fetchTemperatureData(rakeId) {
+  // Function to fetch temperature data for the specified rake ID
+  console.log(rakeId)
+  try {
+    const snapshot = await get(child(dbRef, `rakes/${rakeId}`));
+    if (snapshot.exists()) {
+      const temp = snapshot.val().rakeTemperature;
+      return temp;
+    } else {
+      throw new Error("No data available");
+    }
+  } catch (error) {
+    throw error;
+  }
+}
