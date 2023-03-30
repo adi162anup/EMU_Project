@@ -32,7 +32,14 @@ rakeBtns.forEach(function(rakeBtn) {
     // Update the modal content with the fetched temperature data
      const modalBody = document.querySelector(".modal-body");
      modalBody.innerHTML = `${temperature}`;
-
+    //  console.log(`${temperature}`);
+    // Dummy condition to change Rake 1 button to yellow (denotes warning) when temperature goes above 87 F
+     if(`${temperature}`>'Temperature: 87 F'){
+      document.querySelector("[data-rake-id='RAKE 1']").style.background = 'yellow';
+     }
+     else{
+      document.querySelector("[data-rake-id='RAKE 1']").style.background = '#F0F0F0';
+     }
   });
 });
 
