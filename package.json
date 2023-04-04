@@ -1,0 +1,24 @@
+{
+  "name": "emu_project",
+  "version": "1.0.0",
+  "description": "Building trains is harder than it steams!",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bhavansh-01/EMU_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bhavansh-01/EMU_Project/issues"
+  },
+  "homepage": "https://github.com/Bhavansh-01/EMU_Project#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}
