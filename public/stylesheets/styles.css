@@ -80,7 +80,9 @@
 }
 
 .live-status {
-    margin-top: 5%;
+    position: relative;
+    /** Changed margin-top from 5% to 35% **/
+    margin-top: 35%;
     margin-left: auto;
     margin-right: auto;
 
