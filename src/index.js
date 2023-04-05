@@ -14,9 +14,9 @@ app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'ejs');
 
 // Set up a route for the home page
-// app.get('/', (req, res) => {
-//   res.render('index',{ title: 'My IoT Project' });
-// });
+app.get('/', (req, res) => {
+  res.render('index',{ title: 'My IoT Project' });
+});
 
 // Start the server
 const PORT = process.env.PORT || 3000;

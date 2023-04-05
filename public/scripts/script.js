@@ -58,3 +58,26 @@ async function fetchTemperatureData(rakeId) {
     throw error;
   }
 }
+
+const vcbRef = child(ref(db), 'rakes');
+console.log(vcbRef)
+
+function onChildChanged(data) {
+  // Get the ID of the VCB that changed
+  const vcbId = data.key;
+  // Get the ID of the rake that the VCB is in
+  const rakeId = data.ref.parent.key;
+  // Get the new state of the VCB
+  const newState = data.val().vcb;
+
+  // Update the color of the VCB button in the UI
+  const vcbBtn = document.querySelector(`[data-rake-id='${rakeId}'] [data-vcb-id='${vcbId}']`);
+  if (newState === 'on') {
+    vcbBtn.classList.remove('btn-red');
+    vcbBtn.classList.add('btn-green');
+  } else {
+    vcbBtn.classList.remove('btn-green');
+    vcbBtn.classList.add('btn-red');
+  }
+}
+vcbRef.on('child_changed', onChildChanged);
