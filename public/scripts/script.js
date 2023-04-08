@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-import { getDatabase,ref,get,child} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-database.js";
-
+import { initializeApp } from "firebase/app";
+import { getDatabase, ref, get, child } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -59,25 +58,25 @@ async function fetchTemperatureData(rakeId) {
   }
 }
 
-const vcbRef = child(ref(db), 'rakes');
-console.log(vcbRef)
+// const vcbRef = child(ref(db), 'rakes');
+// console.log(vcbRef)
 
-function onChildChanged(data) {
-  // Get the ID of the VCB that changed
-  const vcbId = data.key;
-  // Get the ID of the rake that the VCB is in
-  const rakeId = data.ref.parent.key;
-  // Get the new state of the VCB
-  const newState = data.val().vcb;
+// function onChildChanged(data) {
+//   // Get the ID of the VCB that changed
+//   const vcbId = data.key;
+//   // Get the ID of the rake that the VCB is in
+//   const rakeId = data.ref.parent.key;
+//   // Get the new state of the VCB
+//   const newState = data.val().vcb;
 
-  // Update the color of the VCB button in the UI
-  const vcbBtn = document.querySelector(`[data-rake-id='${rakeId}'] [data-vcb-id='${vcbId}']`);
-  if (newState === 'on') {
-    vcbBtn.classList.remove('btn-red');
-    vcbBtn.classList.add('btn-green');
-  } else {
-    vcbBtn.classList.remove('btn-green');
-    vcbBtn.classList.add('btn-red');
-  }
-}
-vcbRef.on('child_changed', onChildChanged);
+//   // Update the color of the VCB button in the UI
+//   const vcbBtn = document.querySelector(`[data-rake-id='${rakeId}'] [data-vcb-id='${vcbId}']`);
+//   if (newState === 'on') {
+//     vcbBtn.classList.remove('btn-red');
+//     vcbBtn.classList.add('btn-green');
+//   } else {
+//     vcbBtn.classList.remove('btn-green');
+//     vcbBtn.classList.add('btn-red');
+//   }
+// }
+// vcbRef.on('child_changed', onChildChanged);
