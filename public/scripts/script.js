@@ -1,6 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getDatabase, ref, get, child } from "firebase/database";
+import { getDatabase, ref as dRef, get, child } from "firebase/database";
+import {
+  collection,
+  getFirestore,
+  getDocs,
+  addDoc,
+  onSnapshot
+} from "firebase/firestore"
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,9 +26,9 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
+const db = getDatabase();
 console.log(db);
-const dbRef = ref(db);
+const dbRef = dRef(db);
 
 const rakeBtns = document.querySelectorAll(".rakeBtn");
 rakeBtns.forEach(function(rakeBtn) {
@@ -57,4 +64,26 @@ async function fetchTemperatureData(rakeId) {
     throw error;
   }
 }
+const dbFirebase = getFirestore();
+const colRef = collection(dbFirebase,'rakes')
+getDocs(colRef).then((snapshot)=>{
+  let rakes = []
+  snapshot.docs.forEach((doc)=>{
+      rakes.push({... doc.data(), id:doc.id})
+  })
+  console.log(rakes)
+}).catch((e)=>{
+  console.log(e.message)
+})
+
+onSnapshot(colRef, (snapshot) => {
+  snapshot.docChanges().forEach((change) => {
+    if (change.type === "modified") {
+      console.log("Updated rake: ", change.doc.id)
+      console.log("Updated rake's vcb number: ",change.doc.data().status)
+    }
+  });
+});
+
+    
 

@@ -8,5 +8,4 @@ module.exports = {
     path: path.resolve(__dirname, 'public/dist'),
   },
   watch: true
-
 };
