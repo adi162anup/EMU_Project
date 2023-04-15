@@ -81,8 +81,29 @@ onSnapshot(colRef, (snapshot) => {
     if (change.type === "modified") {
       // console.log("Updated rake: ", change.doc.id)
       // console.log("Updated rake's vcb number: ",change.doc.data().status)
-      console.log(typeof(change.doc.data().status))
-      document.querySelector(`tr[data-set-id="${change.doc.id}"] td[data-vcb-id="${change.doc.data().status}"]`).style.background="red";
+
+      // console.log(typeof(change.doc.data().status))
+      var status = change.doc.data().status
+      var arr = status.split('')
+      // console.log(arr)
+      var vcb = ["1","2","3","4"]
+      for(let i=0;i<vcb.length;i++){
+        if(arr.length>2){
+          if(arr.includes(vcb[i])) {
+          document.querySelector(`tr[data-set-id="${change.doc.id}"] td[data-vcb-id="${vcb[i]}"]`).style.background="red";
+          } else {
+            document.querySelector(`tr[data-set-id="${change.doc.id}"] td[data-vcb-id="${vcb[i]}"]`).style.background="#11eb11";
+          }
+        }
+        else{
+          if(arr.includes(vcb[i])) {
+            document.querySelector(`tr[data-set-id="${change.doc.id}"] td[data-vcb-id="${vcb[i]}"]`).style.background="#fcba03";
+            } else {
+              document.querySelector(`tr[data-set-id="${change.doc.id}"] td[data-vcb-id="${vcb[i]}"]`).style.background="#11eb11";
+            }
+        }
+      }
+      // document.querySelector(`tr[data-set-id="${change.doc.id}"] td[data-vcb-id="${change.doc.data().status}"]`).style.background="red";
 
     }
   });
