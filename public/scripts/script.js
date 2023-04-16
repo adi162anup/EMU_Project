@@ -79,9 +79,8 @@ getDocs(colRef).then((snapshot)=>{
 onSnapshot(colRef, (snapshot) => {
   snapshot.docChanges().forEach((change) => {
     if (change.type === "modified") {
-      // console.log("Updated rake: ", change.doc.id)
-      // console.log("Updated rake's vcb number: ",change.doc.data().status)
-      console.log(typeof(change.doc.data().status))
+
+      // console.log(typeof(change.doc.data().status))
       document.querySelector(`tr[data-set-id="${change.doc.id}"] td[data-vcb-id="${change.doc.data().status}"]`).style.background="red";
 
     }
