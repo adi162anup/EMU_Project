@@ -5,9 +5,11 @@ import {
   collection,
   getFirestore,
   getDocs,
-  addDoc,
   onSnapshot
 } from "firebase/firestore"
+
+import Swal from 'sweetalert2';
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -80,10 +82,7 @@ getDocs(rakeRef).then((snapshot)=>{
 onSnapshot(rakeRef, (snapshot) => {
   snapshot.docChanges().forEach((change) => {
     if (change.type === "modified") {
-      // console.log("Updated rake: ", change.doc.id)
-      // console.log("Updated rake's vcb number: ",change.doc.data().status)
-
-      // console.log(typeof(change.doc.data().status))
+ 
       var status = change.doc.data().status
       var arr = status.split('')
       // console.log(arr)
@@ -110,5 +109,19 @@ onSnapshot(rakeRef, (snapshot) => {
   });
 });
 
+onSnapshot(smokeRef, (snapshot) => {
+  snapshot.docChanges().forEach((change) => {
+    // console.log(change.type === 'modified')
+    // console.log(change.doc.data().smokeDetected)
+    // console.log(change.type === 'modified' && change.doc.data().smokeDetected)
+    if (change.type === 'modified' && change.doc.data().smokeDetected) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Smoke Detected!',
+        text: `Smoke has been detected in the rake ${change.doc.id} `,
+      });
+    }
+  });
+});
 
 
