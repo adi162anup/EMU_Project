@@ -71,7 +71,7 @@ async function fetchTemperatureData(rakeId) {
   }
 }
 const dbFirebase = getFirestore();
-const rakeRef = collection(dbFirebase,'rakes')
+const rakeRef = collection(dbFirebase,'vcbSensors')
 const smokeRef = collection(dbFirebase,'smokeSensors')
 getDocs(rakeRef).then((snapshot)=>{
   let rakes = []
@@ -84,6 +84,7 @@ getDocs(rakeRef).then((snapshot)=>{
 })
 
 onSnapshot(rakeRef, (snapshot) => {
+  // console.log(snapshot)
   snapshot.docChanges().forEach((change) => {
     if (change.type === "modified") {
  

@@ -25,7 +25,9 @@
     "firebase-tools": "^11.27.0",
     "nodemon": "^2.0.22",
     "sweetalert2": "^11.7.3",
-    "webpack": "^5.79.0",
-    "webpack-cli": "^5.0.1"
+    "webpack": "^5.79.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
   }
 }
