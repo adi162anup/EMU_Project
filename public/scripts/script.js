@@ -42,7 +42,10 @@ rakeBtns.forEach(function(rakeBtn) {
      modalBody.innerHTML = `${temperature}`;
     //  console.log(`${temperature}`);
     // Dummy condition to change Rake 1 button to yellow (denotes warning) when temperature goes above 87 F
-     if(`${temperature}`>'Temperature: 87 F'){
+    const arr=temperature.split(' ');
+    const temp_val=arr[1];
+    const actual_val=parseFloat(temp_val);
+     if(actual_val>87){
       document.querySelector("[data-rake-id='RAKE 1']").style.background = 'yellow';
      }
      else{
@@ -55,10 +58,11 @@ async function fetchTemperatureData(rakeId) {
   // Function to fetch temperature data for the specified rake ID
   console.log(rakeId)
   try {
-    const snapshot = await get(child(dbRef, `rakes/${rakeId}/rakeTemperature`));
+    const snapshot = await get(child(dbRef, `rakes/${rakeId}/Temperature`));
     if (snapshot.exists()) {
-      const temp = snapshot.val().rakeTemperature;
-      return temp;
+      const temp = snapshot.val();
+      const temp1=`Temperature: ${temp} F`;
+      return temp1;
     } else {
       throw new Error("No data available");
     }
@@ -123,5 +127,4 @@ onSnapshot(smokeRef, (snapshot) => {
     }
   });
 });
-
 
