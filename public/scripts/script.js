@@ -46,10 +46,10 @@ rakeBtns.forEach(function(rakeBtn) {
     const temp_val=arr[1];
     const actual_val=parseFloat(temp_val);
      if(actual_val>87){
-      document.querySelector("[data-rake-id='RAKE 1']").style.background = 'yellow';
+      document.querySelector(`[data-rake-id='${rakeId}']`).style.background = 'yellow';
      }
      else{
-      document.querySelector("[data-rake-id='RAKE 1']").style.background = '#F0F0F0';
+      document.querySelector(`[data-rake-id='${rakeId}']`).style.background = '#F0F0F0';
      }
   });
 });
